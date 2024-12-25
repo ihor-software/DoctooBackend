@@ -19,7 +19,7 @@ export const sequelizeDevelopmentConfig: SequelizeModuleOptions = {
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
   port: parseInt(process.env.DB_PORT) || 5432,
-  host: 'db',
+  host: process.env.DB_HOST,
   dialect: 'postgres',
   autoLoadModels: true,
   models: [
