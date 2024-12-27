@@ -14,6 +14,11 @@ async function bootstrap() {
     .setVersion('1.0')
     .build();
   app.useGlobalPipes(new ValidationPipe());
+  app.enableCors({
+    origin: 'https://doctoo-frontend.onrender.com',
+    credentials: true,
+  });
+  
   app.enableCors();
   app.use(cookieParser());
   app.setGlobalPrefix('api/v1');
